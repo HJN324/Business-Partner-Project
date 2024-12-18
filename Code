@@ -1,0 +1,84 @@
+def main_menu():
+    print("Menu:")
+    print("1. Invest")
+    print("2. Transfer")
+    print("3. News")
+    print("4. Login to your account")
+
+def finance_menu():
+    print("You chose to invest")
+    print("Which stock market would you like to enter today?")
+    print("a. Tokyo Stock Exchange")
+    print("b. Shanghai Stock Exchange")
+    print("c. London Stock Exchange")
+
+def invest_transact_menu():
+    print("Deposit")
+    print("Withdraw")
+    print("Back")
+
+def login():
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+    print(f"Welcome, {username}!")
+
+while True:
+    main_menu()
+    choice = input("Enter your choice: ")
+    
+    if choice == "1":
+        while True:
+            finance_menu()
+            sub_choice = input("Enter your choice: ")
+            if sub_choice == "a":
+                print("You've entered the Tokyo Stock Exhange.")
+                invest_transact_menu()
+            sub_choice = input("Enter your choice: ")
+            if sub_choice == "Invest":
+                amount = input("How much money would you like to Invest? ")
+                print(f"You have entered: ${amount}")
+
+            elif sub_choice == "b":
+                print("You've entered the Shanghai Stock Exchange.")
+                invest_transact_menu()
+            sub_choice = input("Enter your choice: ")
+            if sub_choice == "Invest":
+                amount = input("How much money would you like to Invest? ")
+                print(f"You have entered: ${amount}")
+
+            elif sub_choice == "c":
+                print("You've entered the London Stock Exchange.")
+                invest_transact_menu()
+            sub_choice = input("Enter your choice: ")
+            if sub_choice == "Invest":
+                amount = input("How much money would you like to Invest? ")
+                print(f"You have entered: ${amount}")
+
+            else:
+                break
+    
+    elif choice == "2":
+        while True:
+            invest_transact_menu()
+            sub_choice = input("Enter your choice: ")
+            if sub_choice == "Deposit":
+                amount = input("How much money would you like to deposit? ")
+                print(f"You have entered: ${amount}")
+            elif sub_choice == "Withdraw":
+                amount = input("How much money would you like to withdraw? ")
+                print(f"You have requested to withdraw: ${amount}")
+            else:
+                break
+    
+    elif choice == "3":
+        print("News today - ")
+    
+    elif choice == "4":
+        login()
+    
+    else:
+        print("Invalid choice. Please select a valid option.")
+    
+    more = input("Do you want to perform another action? (yes/no): ")
+    if more.lower() != 'yes':
+        break
